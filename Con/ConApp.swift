@@ -26,7 +26,7 @@ struct ConApp: App {
                     .tabItem {
                         Label("Map", systemImage: "map")
                     }
-                LOCView()
+                MembersListView()
                     .tabItem {
                         Label("LOC", systemImage: "folder.badge.person.crop")
                     }
