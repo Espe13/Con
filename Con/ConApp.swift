@@ -30,10 +30,15 @@ struct ConApp: App {
                     .tabItem {
                         Label("LOC", systemImage: "folder.badge.person.crop")
                     }
+                SOCListView()
+                    .tabItem {
+                        Label("SOC", systemImage: "person.2.square.stack.fill")
+                    }
                 RichardView()
                     .tabItem {
                         Label("Richard", systemImage: "graduationcap.fill")
                     }
+                
             }
         }
     }

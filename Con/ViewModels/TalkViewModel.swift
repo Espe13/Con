@@ -39,6 +39,8 @@ class TalkViewModel: ObservableObject {
                 let name = data["name"] as? String ?? ""
                 let abstract = data["abstract"] as? String ?? ""
                 let imageURL = data["imageURL"] as? String ?? ""
+                let image = data["image"] as? String ?? ""
+                
                 
                 // Convert Timestamp to Date
                 let startTimestamp = data["start"] as? Timestamp
@@ -53,7 +55,7 @@ class TalkViewModel: ObservableObject {
                     defer { group.leave() } // Ensure group.leave() is called even if an error occurs
                     
                     if let downloadURL = url?.absoluteString {
-                        let talk = Talk(id: document.documentID, title: title, name: name, abstract: abstract, start: start, end: end, imageURL: downloadURL)
+                        let talk = Talk(id: document.documentID, title: title, name: name, abstract: abstract, start: start, end: end, imageURL: downloadURL, image: image)
                         allTalks.append(talk)
                     } else {
                         print("Error or no URL for image: \(error?.localizedDescription ?? "Unknown error")")

@@ -15,4 +15,5 @@ struct Talk: Codable, Identifiable {
     var start: Date
     var end: Date
     var imageURL: String
+    var image: String
 }

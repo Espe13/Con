@@ -1,15 +1,16 @@
 //
-//  LOCListView.swift
+//  SOCListView.swift
 //  Con
 //
 //  Created by Amanda on 15.02.24.
 //
 
+
 import SwiftUI
 import Combine
 
-struct MembersListView: View {
-    @ObservedObject var viewModel = MemberViewModel()
+struct SOCListView: View {
+    @ObservedObject var viewModel = SOCMemberViewModel()
     @State private var expandedMemberID: String? = nil
     
     var body: some View {
@@ -19,7 +20,7 @@ struct MembersListView: View {
                     if let members = viewModel.membersByRanking[rank] {
                         Section() {
                             ForEach(members) { member in
-                                MemberView(member: member, isExpanded: self.expandedMemberID == member.id)
+                                SOCMemberView(member: member, isExpanded: self.expandedMemberID == member.id)
                                     .onTapGesture {
                                         self.expandedMemberID = (self.expandedMemberID == member.id) ? nil : member.id
                                     }
@@ -28,7 +29,7 @@ struct MembersListView: View {
                     }
                 }
             }
-            .navigationTitle("Local Committee")
+            .navigationTitle("Scientific Committee")
         }
         .onAppear {
             viewModel.fetchData()
@@ -36,8 +37,9 @@ struct MembersListView: View {
     }
 }
 
-struct MemberView: View {
-    var member: Member
+
+struct SOCMemberView: View {
+    var member: SOCMember
     var isExpanded: Bool
     
     var body: some View {
@@ -62,25 +64,40 @@ struct MemberView: View {
             }
             
             if isExpanded {
-                HStack {
-                    AsyncImage(url: URL(string: member.imageURL)) { image in
-                        image.resizable().cornerRadius(15)
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 200, maxHeight: 200)
-                    
-                    VStack {
-                        Text(member.info).font(.body)
-                        Link(destination: URL(string: member.mail)!) {
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        AsyncImage(url: URL(string: member.imageURL)) { image in
+                            image.resizable().cornerRadius(15)
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 200, maxHeight: 200)
+                        
+                        Link(destination: URL(string: "mailto:" + member.mail)!) {
                                     Image(systemName: "envelope.fill")
                                         .font(.title) // Adjust the icon size
                                         .foregroundColor(CustomColors.niceBlue) // Adjust the icon color
                                 }
                             .buttonStyle(.bordered)
                             .padding([.trailing, .leading], 40)
+                        
                     }
+                    Text(member.info).font(.footnote)
+                    if member.link != "" {
+                        HStack {
+                            Text("Find more information about \(member.name):")
+                                .font(.footnote)
+                            
+                            Link(destination: URL(string: member.link)!){Image(systemName: "link")
+                                    .font(.body) // Adjust the icon size
+                                    .foregroundColor(CustomColors.niceBlue)
+                                    .buttonStyle(.bordered)
+                                // Adjust the icon color
+                            }
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)}
                 }
             }
         }.padding(5)
@@ -88,9 +105,10 @@ struct MemberView: View {
 }
 
 
-struct MembersListView_Previews: PreviewProvider {
+
+struct SOCListView_Previews: PreviewProvider {
     static var previews: some View {
-        MembersListView()
+        SOCListView()
     }
 }
 

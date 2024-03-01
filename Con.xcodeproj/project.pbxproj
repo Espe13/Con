@@ -26,6 +26,7 @@
 		379EFD332B7D907B0087194C /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379EFD322B7D907B0087194C /* Talk.swift */; };
 		379EFD362B7D91700087194C /* TalkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379EFD352B7D91700087194C /* TalkViewModel.swift */; };
 		379EFD392B7D95650087194C /* TalkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379EFD382B7D95650087194C /* TalkListView.swift */; };
+		37A697B02B7E7248003552AC /* SOCListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A697AF2B7E7248003552AC /* SOCListView.swift */; };
 		37B9F5B72B7E56B100092549 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9F5B62B7E56B100092549 /* Member.swift */; };
 		37B9F5B92B7E56DB00092549 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9F5B82B7E56DB00092549 /* MemberViewModel.swift */; };
 		37B9F5BB2B7E59BD00092549 /* MembersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9F5BA2B7E59BD00092549 /* MembersListView.swift */; };
@@ -69,6 +70,7 @@
 		379EFD322B7D907B0087194C /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
 		379EFD352B7D91700087194C /* TalkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewModel.swift; sourceTree = "<group>"; };
 		379EFD382B7D95650087194C /* TalkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkListView.swift; sourceTree = "<group>"; };
+		37A697AF2B7E7248003552AC /* SOCListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOCListView.swift; sourceTree = "<group>"; };
 		37B9F5B62B7E56B100092549 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		37B9F5B82B7E56DB00092549 /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
 		37B9F5BA2B7E59BD00092549 /* MembersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersListView.swift; sourceTree = "<group>"; };
@@ -126,8 +128,8 @@
 		379EFCF22B7CEF9E0087194C /* Con */ = {
 			isa = PBXGroup;
 			children = (
-				379EFD342B7D91560087194C /* ViewModels */,
 				379EFCF32B7CEF9E0087194C /* ConApp.swift */,
+				379EFD342B7D91560087194C /* ViewModels */,
 				379EFD312B7D90640087194C /* Models */,
 				379EFD2F2B7D7AF00087194C /* Color.swift */,
 				379EFD372B7D95550087194C /* Views */,
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				379EFD382B7D95650087194C /* TalkListView.swift */,
+				37A697AF2B7E7248003552AC /* SOCListView.swift */,
 				37B9F5BA2B7E59BD00092549 /* MembersListView.swift */,
 			);
 			path = Views;
@@ -339,6 +342,7 @@
 				37B9F5BD2B7E61A200092549 /* ImageLoader.swift in Sources */,
 				37B9F5BB2B7E59BD00092549 /* MembersListView.swift in Sources */,
 				379EFD392B7D95650087194C /* TalkListView.swift in Sources */,
+				37A697B02B7E7248003552AC /* SOCListView.swift in Sources */,
 				379EFD222B7CF0100087194C /* MapView.swift in Sources */,
 				379EFD332B7D907B0087194C /* Talk.swift in Sources */,
 				379EFD242B7CF0190087194C /* RichardView.swift in Sources */,
